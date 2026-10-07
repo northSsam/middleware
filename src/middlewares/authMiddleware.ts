@@ -15,7 +15,6 @@ export function authMiddleware(req: any, res: Response, next: NextFunction) {
 
     try {
         const verified = jwt.verify(token, process.env.JWT_SECRET || "super-secret")
-
         req.user = verified
 
         next()
